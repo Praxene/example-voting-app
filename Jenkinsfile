@@ -59,7 +59,7 @@ pipeline {
   }
   post {
         always {
-            archiveArtifacts artifacts: 'security.log', onlyIfSuccessful: false
+            archiveArtifacts artifacts: 'git-security.json, vote-container-security.json, result-container-security.json, worker-container-security.json', onlyIfSuccessful: false
         }
     }
 }
