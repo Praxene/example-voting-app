@@ -25,7 +25,7 @@ pipeline {
       steps {
         sh 'trivy fs -f json -o git-security.json .'
         sh 'trivy image -f json -o vote-container-security.json docker.io/spywash/devops:vote'
-        sh 'trivy image -f json -o result-container-security.json docker.io/spywash/devops:result
+        sh 'trivy image -f json -o result-container-security.json docker.io/spywash/devops:result'
         sh 'trivy image -f json -o worker-container-security.json docker.io/spywash/devops:worker'
         
       }
