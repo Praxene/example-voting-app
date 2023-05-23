@@ -16,8 +16,7 @@ pipeline {
           branch 'dev'
       }
       steps {
-         sh 'echo "c est terminer?'
-              input message: 'Finished using the web site? (Click "Proceed" to continue)'
+         sh 'echo "c est terminer"'
       }
     }
     stage('Build result') {
@@ -40,8 +39,7 @@ pipeline {
           branch 'main'
       }
       steps {
-         sh 'echo "c est terminé?'
-              input message: 'Finished using the web site? (Click "Proceed" to continue)'
+         sh 'echo "c est terminé"'
       }
     }
     stage('Security scan') {
