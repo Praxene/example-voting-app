@@ -70,4 +70,5 @@ pipeline {
             archiveArtifacts artifacts: 'security.log', onlyIfSuccessful: false
         }
     }
+  } 
 }
