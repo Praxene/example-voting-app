@@ -2,172 +2,189 @@ kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
   annotations:
-    template.alpha.openshift.io/wait-for-ready: "true"
-  resourceVersion: "764793995"
+    app.openshift.io/connects-to: '[{"apiVersion":"apps/v1","kind":"Deployment","name":"result"}]'
+    iconClass: icon-postgresql
+    template.alpha.openshift.io/wait-for-ready: 'true'
+  resourceVersion: '765809532'
   name: db
-  uid: ae7859ae-7a8d-449f-8ead-9cec9742bc12
-  creationTimestamp: "2023-05-23T08:42:16Z"
+  uid: 51a31a56-fbc7-476a-986c-ce4fe383e0a0
+  creationTimestamp: '2023-05-23T13:58:44Z'
   generation: 2
   managedFields:
     - manager: openshift-controller-manager
       operation: Update
       apiVersion: apps.openshift.io/v1
-      time: "2023-05-23T08:42:16Z"
+      time: '2023-05-23T13:58:45Z'
       fieldsType: FieldsV1
       fieldsV1:
-        "f:metadata":
-          "f:annotations":
+        'f:metadata':
+          'f:annotations':
             .: {}
-            "f:template.alpha.openshift.io/wait-for-ready": {}
-          "f:labels":
+            'f:template.alpha.openshift.io/wait-for-ready': {}
+          'f:labels':
             .: {}
-            "f:template": {}
-            "f:template.openshift.io/template-instance-owner": {}
-        "f:spec":
-          "f:replicas": {}
-          "f:selector":
+            'f:template': {}
+            'f:template.openshift.io/template-instance-owner': {}
+        'f:spec':
+          'f:replicas': {}
+          'f:selector':
             .: {}
-            "f:name": {}
-          "f:strategy":
-            "f:activeDeadlineSeconds": {}
-            "f:recreateParams":
+            'f:name': {}
+          'f:strategy':
+            'f:activeDeadlineSeconds': {}
+            'f:recreateParams':
               .: {}
-              "f:timeoutSeconds": {}
-            "f:type": {}
-          "f:template":
+              'f:timeoutSeconds': {}
+            'f:type': {}
+          'f:template':
             .: {}
-            "f:metadata":
+            'f:metadata':
               .: {}
-              "f:creationTimestamp": {}
-              "f:labels":
+              'f:creationTimestamp': {}
+              'f:labels':
                 .: {}
-                "f:name": {}
-            "f:spec":
+                'f:name': {}
+            'f:spec':
               .: {}
-              "f:containers":
+              'f:containers':
                 .: {}
                 'k:{"name":"postgresql"}':
-                  "f:image": {}
-                  "f:volumeMounts":
+                  'f:image': {}
+                  'f:volumeMounts':
                     .: {}
                     'k:{"mountPath":"/var/lib/pgsql/data"}':
                       .: {}
-                      "f:mountPath": {}
-                      "f:name": {}
-                  "f:terminationMessagePolicy": {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                  'f:terminationMessagePolicy': {}
                   .: {}
-                  "f:resources":
+                  'f:resources':
                     .: {}
-                    "f:limits":
+                    'f:limits':
                       .: {}
-                      "f:memory": {}
-                  "f:livenessProbe":
+                      'f:memory': {}
+                  'f:livenessProbe':
                     .: {}
-                    "f:exec":
+                    'f:exec':
                       .: {}
-                      "f:command": {}
-                    "f:failureThreshold": {}
-                    "f:initialDelaySeconds": {}
-                    "f:periodSeconds": {}
-                    "f:successThreshold": {}
-                    "f:timeoutSeconds": {}
-                  "f:env":
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:env':
                     .: {}
                     'k:{"name":"POSTGRESQL_DATABASE"}':
                       .: {}
-                      "f:name": {}
-                      "f:valueFrom":
+                      'f:name': {}
+                      'f:valueFrom':
                         .: {}
-                        "f:secretKeyRef": {}
+                        'f:secretKeyRef': {}
                     'k:{"name":"POSTGRESQL_PASSWORD"}':
                       .: {}
-                      "f:name": {}
-                      "f:valueFrom":
+                      'f:name': {}
+                      'f:valueFrom':
                         .: {}
-                        "f:secretKeyRef": {}
+                        'f:secretKeyRef': {}
                     'k:{"name":"POSTGRESQL_USER"}':
                       .: {}
-                      "f:name": {}
-                      "f:valueFrom":
+                      'f:name': {}
+                      'f:valueFrom':
                         .: {}
-                        "f:secretKeyRef": {}
-                  "f:readinessProbe":
+                        'f:secretKeyRef': {}
+                  'f:readinessProbe':
                     .: {}
-                    "f:exec":
+                    'f:exec':
                       .: {}
-                      "f:command": {}
-                    "f:failureThreshold": {}
-                    "f:initialDelaySeconds": {}
-                    "f:periodSeconds": {}
-                    "f:successThreshold": {}
-                    "f:timeoutSeconds": {}
-                  "f:securityContext":
+                      'f:command': {}
+                    'f:failureThreshold': {}
+                    'f:initialDelaySeconds': {}
+                    'f:periodSeconds': {}
+                    'f:successThreshold': {}
+                    'f:timeoutSeconds': {}
+                  'f:securityContext':
                     .: {}
-                    "f:capabilities": {}
-                    "f:privileged": {}
-                  "f:terminationMessagePath": {}
-                  "f:imagePullPolicy": {}
-                  "f:ports":
+                    'f:capabilities': {}
+                    'f:privileged': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
                     .: {}
                     'k:{"containerPort":5432,"protocol":"TCP"}':
                       .: {}
-                      "f:containerPort": {}
-                      "f:protocol": {}
-                  "f:name": {}
-              "f:dnsPolicy": {}
-              "f:restartPolicy": {}
-              "f:schedulerName": {}
-              "f:securityContext": {}
-              "f:terminationGracePeriodSeconds": {}
-              "f:volumes":
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+              'f:volumes':
                 .: {}
-                'k:{"name":"postgresql-data"}':
+                'k:{"name":"db-data"}':
                   .: {}
-                  "f:name": {}
-                  "f:persistentVolumeClaim":
+                  'f:name': {}
+                  'f:persistentVolumeClaim':
                     .: {}
-                    "f:claimName": {}
-          "f:triggers": {}
+                    'f:claimName': {}
+          'f:triggers': {}
     - manager: openshift-controller-manager
       operation: Update
       apiVersion: apps.openshift.io/v1
-      time: "2023-05-23T08:42:37Z"
+      time: '2023-05-23T13:59:02Z'
       fieldsType: FieldsV1
       fieldsV1:
-        "f:status":
-          "f:updatedReplicas": {}
-          "f:readyReplicas": {}
-          "f:conditions":
+        'f:status':
+          'f:updatedReplicas': {}
+          'f:readyReplicas': {}
+          'f:conditions':
             .: {}
             'k:{"type":"Available"}':
               .: {}
-              "f:lastTransitionTime": {}
-              "f:lastUpdateTime": {}
-              "f:message": {}
-              "f:status": {}
-              "f:type": {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:status': {}
+              'f:type': {}
             'k:{"type":"Progressing"}':
               .: {}
-              "f:lastTransitionTime": {}
-              "f:lastUpdateTime": {}
-              "f:message": {}
-              "f:reason": {}
-              "f:status": {}
-              "f:type": {}
-          "f:details":
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:details':
             .: {}
-            "f:causes": {}
-            "f:message": {}
-          "f:replicas": {}
-          "f:availableReplicas": {}
-          "f:observedGeneration": {}
-          "f:unavailableReplicas": {}
-          "f:latestVersion": {}
+            'f:causes': {}
+            'f:message': {}
+          'f:replicas': {}
+          'f:availableReplicas': {}
+          'f:observedGeneration': {}
+          'f:unavailableReplicas': {}
+          'f:latestVersion': {}
       subresource: status
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps.openshift.io/v1
+      time: '2023-05-23T14:10:12Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:app.openshift.io/connects-to': {}
+            'f:iconClass': {}
+          'f:labels':
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
   namespace: yannvd-dev
   labels:
+    app.kubernetes.io/part-of: example-voting-app
+    app.openshift.io/runtime: postgresql
     template: postgresql-persistent-template
-    template.openshift.io/template-instance-owner: cf58d2ab-a9e3-47a1-9ec8-221931670f0c
+    template.openshift.io/template-instance-owner: f0716c71-51cd-49cf-a5d9-44faab635d5c
 spec:
   strategy:
     type: Recreate
@@ -184,7 +201,7 @@ spec:
         from:
           kind: ImageStreamTag
           namespace: openshift
-          name: "postgresql:10-el8"
+          name: 'postgresql:10-el8'
         lastTriggeredImage: >-
           image-registry.openshift-image-registry.svc:5000/openshift/postgresql@sha256:f98ee90210167538a919250e6cee6fc2105744b9adfd986034cd0a3056d1b209
     - type: ConfigChange
@@ -192,17 +209,17 @@ spec:
   revisionHistoryLimit: 10
   test: false
   selector:
-    name: postgresql
+    name: db
   template:
     metadata:
       creationTimestamp: null
       labels:
-        name: postgresql
+        name: db
     spec:
       volumes:
-        - name: postgresql-data
+        - name: db-data
           persistentVolumeClaim:
-            claimName: postgresql
+            claimName: db
       containers:
         - resources:
             limits:
@@ -222,7 +239,7 @@ spec:
             exec:
               command:
                 - /usr/libexec/check-container
-                - "--live"
+                - '--live'
             initialDelaySeconds: 120
             timeoutSeconds: 10
             periodSeconds: 10
@@ -230,13 +247,19 @@ spec:
             failureThreshold: 3
           env:
             - name: POSTGRESQL_USER
-              value: postgres
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: database-user
             - name: POSTGRESQL_PASSWORD
-              value: postgres
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: database-password
             - name: POSTGRESQL_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: postgresql
+                  name: db
                   key: database-name
           securityContext:
             capabilities: {}
@@ -246,7 +269,7 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
           volumeMounts:
-            - name: postgresql-data
+            - name: db-data
               mountPath: /var/lib/pgsql/data
           terminationMessagePolicy: File
           image: >-
@@ -268,26 +291,156 @@ status:
   updatedReplicas: 1
   conditions:
     - type: Available
-      status: "True"
-      lastUpdateTime: "2023-05-23T08:42:34Z"
-      lastTransitionTime: "2023-05-23T08:42:34Z"
+      status: 'True'
+      lastUpdateTime: '2023-05-23T13:58:59Z'
+      lastTransitionTime: '2023-05-23T13:58:59Z'
       message: Deployment config has minimum availability.
     - type: Progressing
-      status: "True"
-      lastUpdateTime: "2023-05-23T08:42:37Z"
-      lastTransitionTime: "2023-05-23T08:42:17Z"
+      status: 'True'
+      lastUpdateTime: '2023-05-23T13:59:02Z'
+      lastTransitionTime: '2023-05-23T13:59:02Z'
       reason: NewReplicationControllerAvailable
-      message: replication controller "postgresql-1" successfully rolled out
+      message: replication controller "db-1" successfully rolled out
   replicas: 1
   readyReplicas: 1
 
 ---
-apiVersion: apps/v1
+
 kind: Deployment
+apiVersion: apps/v1
 metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/connects-to: '[{"apiVersion":"apps/v1","kind":"Deployment","name":"worker"}]'
+    app.openshift.io/route-disabled: 'false'
+    deployment.kubernetes.io/revision: '1'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"redis:alpine","namespace":"yannvd-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"redis\")].image","pause":"false"}]
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '765810278'
+  name: redis
+  uid: 0d9121fa-d075-4aba-8966-1e8cc7a5bf0f
+  creationTimestamp: '2023-05-23T13:13:47Z'
+  generation: 4
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T13:20:25Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:alpha.image.policy.openshift.io/resolve-names': {}
+            'f:app.openshift.io/connects-to': {}
+            'f:app.openshift.io/route-disabled': {}
+            'f:image.openshift.io/triggers': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-namespace': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                .: {}
+                'f:openshift.io/generated-by': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:deployment': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"redis"}':
+                  'f:image': {}
+                  'f:volumeMounts':
+                    .: {}
+                    'k:{"mountPath":"/data"}':
+                      .: {}
+                      'f:mountPath': {}
+                      'f:name': {}
+                  'f:terminationMessagePolicy': {}
+                  .: {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:imagePullPolicy': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":6379,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:name': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+              'f:volumes':
+                .: {}
+                'k:{"name":"redis-1"}':
+                  .: {}
+                  'f:emptyDir': {}
+                  'f:name': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T14:10:26Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+      subresource: status
+  namespace: yannvd-dev
   labels:
     app: redis
-  name: redis
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/instance: redis
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/part-of: example-voting-app
+    app.openshift.io/runtime: redis
+    app.openshift.io/runtime-namespace: yannvd-dev
 spec:
   replicas: 1
   selector:
@@ -295,43 +448,189 @@ spec:
       app: redis
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: redis
+        deployment: redis
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
     spec:
+      volumes:
+        - name: redis-1
+          emptyDir: {}
       containers:
-        - image: redis:alpine
-          name: redis
+        - name: redis
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/yannvd-dev/redis@sha256:e20345b7ec692815860c07f0209eb0465687b0c28cd85df412811ae1ac7b653e
           ports:
             - containerPort: 6379
-              name: redis
+              protocol: TCP
+          resources: {}
           volumeMounts:
-            - mountPath: /data
-              name: redis-data
-      volumes:
-        - name: redis-data
-          emptyDir: {}
+            - name: redis-1
+              mountPath: /data
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 4
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2023-05-23T13:13:48Z'
+      lastTransitionTime: '2023-05-23T13:13:47Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "redis-7549449cfb" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2023-05-23T14:10:26Z'
+      lastTransitionTime: '2023-05-23T14:10:26Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+
+
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: redis
-  name: redis
-spec:
-  type: ClusterIP
-  ports:
-    - name: "redis-service"
-      port: 6379
-      targetPort: 6379
-  selector:
-    app: redis
----
-apiVersion: apps/v1
+
 kind: Deployment
+apiVersion: apps/v1
 metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/connects-to: >-
+      [{"apiVersion":"apps.openshift.io/v1","kind":"DeploymentConfig","name":"db"}]
+    app.openshift.io/route-disabled: 'false'
+    deployment.kubernetes.io/revision: '1'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"worker:worker","namespace":"yannvd-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"worker\")].image","pause":"false"}]
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '765810591'
+  name: worker
+  uid: 354da922-d077-4fcb-8f43-f435a1afafdb
+  creationTimestamp: '2023-05-23T13:16:18Z'
+  generation: 4
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T13:20:30Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:alpha.image.policy.openshift.io/resolve-names': {}
+            'f:app.openshift.io/connects-to': {}
+            'f:app.openshift.io/route-disabled': {}
+            'f:image.openshift.io/triggers': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-namespace': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                .: {}
+                'f:openshift.io/generated-by': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:deployment': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"worker"}':
+                  .: {}
+                  'f:image': {}
+                  'f:imagePullPolicy': {}
+                  'f:name': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8080,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T14:10:32Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+      subresource: status
+  namespace: yannvd-dev
   labels:
     app: worker
-  name: worker
+    app.kubernetes.io/component: worker
+    app.kubernetes.io/instance: worker
+    app.kubernetes.io/name: worker
+    app.kubernetes.io/part-of: example-voting-app
+    app.openshift.io/runtime: dotnet
+    app.openshift.io/runtime-namespace: yannvd-dev
 spec:
   replicas: 1
   selector:
@@ -339,19 +638,182 @@ spec:
       app: worker
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: worker
+        deployment: worker
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
     spec:
       containers:
-        - image: spywash/devops:worker
-          name: worker
+        - name: worker
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/yannvd-dev/worker@sha256:414b3ac5975fdc69095e72e1c6277a756ea49b1e64b3b21e08169414d5a07c7e
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 4
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2023-05-23T13:16:20Z'
+      lastTransitionTime: '2023-05-23T13:16:18Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "worker-f6d9c8b95" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2023-05-23T14:10:32Z'
+      lastTransitionTime: '2023-05-23T14:10:32Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+
+
 ---
-apiVersion: apps/v1
+
 kind: Deployment
+apiVersion: apps/v1
 metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/connects-to: '[{"apiVersion":"apps/v1","kind":"Deployment","name":"redis"}]'
+    app.openshift.io/route-disabled: 'false'
+    deployment.kubernetes.io/revision: '1'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"vote:vote","namespace":"yannvd-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"vote\")].image","pause":"false"}]
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '765812591'
+  name: vote
+  uid: c0292a88-84f3-43b3-b0cb-89e948ebe60e
+  creationTimestamp: '2023-05-23T13:14:19Z'
+  generation: 4
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T14:09:10Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:alpha.image.policy.openshift.io/resolve-names': {}
+            'f:app.openshift.io/connects-to': {}
+            'f:app.openshift.io/route-disabled': {}
+            'f:image.openshift.io/triggers': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-namespace': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                .: {}
+                'f:openshift.io/generated-by': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:deployment': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"vote"}':
+                  .: {}
+                  'f:image': {}
+                  'f:imagePullPolicy': {}
+                  'f:name': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8000,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T14:11:10Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+      subresource: status
+  namespace: yannvd-dev
   labels:
     app: vote
-  name: vote
+    app.kubernetes.io/component: vote
+    app.kubernetes.io/instance: vote
+    app.kubernetes.io/name: vote
+    app.kubernetes.io/part-of: example-voting-app
+    app.openshift.io/runtime: apache
+    app.openshift.io/runtime-namespace: yannvd-dev
 spec:
   replicas: 1
   selector:
@@ -359,38 +821,179 @@ spec:
       app: vote
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: vote
+        deployment: vote
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
     spec:
       containers:
-        - image: spywash/devops:vote
-          name: vote
+        - name: vote
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/yannvd-dev/vote@sha256:95f10a95648d2cee75fec3d19ad2a60cbc36fac1c01453017cee9400a7fccec1
           ports:
             - containerPort: 8000
-              name: vote
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 4
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2023-05-23T13:14:21Z'
+      lastTransitionTime: '2023-05-23T13:14:19Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "vote-7fb9999867" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2023-05-23T14:11:10Z'
+      lastTransitionTime: '2023-05-23T14:11:10Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: vote
-  name: vote
-spec:
-  type: NodePort
-  ports:
-    - name: "vote-service"
-      port: 5000
-      targetPort: 8000
-      nodePort: 32000
-  selector:
-    app: vote
----
-apiVersion: apps/v1
+
 kind: Deployment
+apiVersion: apps/v1
 metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/route-disabled: 'false'
+    deployment.kubernetes.io/revision: '1'
+    image.openshift.io/triggers: >-
+      [{"from":{"kind":"ImageStreamTag","name":"result:result","namespace":"yannvd-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"result\")].image","pause":"false"}]
+    openshift.io/generated-by: OpenShiftWebConsole
+  resourceVersion: '765811822'
+  name: result
+  uid: 8a317a77-e5e9-4055-8cd4-c03b34f2b028
+  creationTimestamp: '2023-05-23T13:19:48Z'
+  generation: 3
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T14:09:46Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:alpha.image.policy.openshift.io/resolve-names': {}
+            'f:app.openshift.io/route-disabled': {}
+            'f:image.openshift.io/triggers': {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime': {}
+            'f:app.openshift.io/runtime-namespace': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:annotations':
+                .: {}
+                'f:openshift.io/generated-by': {}
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:deployment': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"result"}':
+                  .: {}
+                  'f:image': {}
+                  'f:imagePullPolicy': {}
+                  'f:name': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":8001,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:protocol': {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2023-05-23T14:10:58Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+      subresource: status
+  namespace: yannvd-dev
   labels:
     app: result
-  name: result
+    app.kubernetes.io/component: result
+    app.kubernetes.io/instance: result
+    app.kubernetes.io/name: result
+    app.kubernetes.io/part-of: example-voting-app
+    app.openshift.io/runtime: nodejs
+    app.openshift.io/runtime-namespace: yannvd-dev
 spec:
   replicas: 1
   selector:
@@ -398,28 +1001,52 @@ spec:
       app: result
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: result
+        deployment: result
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
     spec:
       containers:
-        - image: spywash/devops:result
-          name: result
+        - name: result
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/yannvd-dev/result@sha256:402f458f2a3a179275ee784a4f53df0701626fd62338cc6aade8e1a8b077f4d6
           ports:
-            - containerPort: 80
-              name: result
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: result
-  name: result
-spec:
-  type: NodePort
-  ports:
-    - name: "result-service"
-      port: 5001
-      targetPort: 80
-      nodePort: 32001
-  selector:
-    app: result
+            - containerPort: 8001
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 3
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2023-05-23T13:19:50Z'
+      lastTransitionTime: '2023-05-23T13:19:48Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "result-c96c5c456" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2023-05-23T14:10:58Z'
+      lastTransitionTime: '2023-05-23T14:10:58Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
