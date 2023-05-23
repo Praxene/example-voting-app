@@ -23,11 +23,10 @@ pipeline {
     }
     stage('Security scan') {
       steps {
-        sh 'trivy fs -f json -o git-security.json .'
-        sh 'trivy image -f json -o vote-container-security.json docker.io/spywash/devops:vote'
-        sh 'trivy image -f json -o result-container-security.json docker.io/spywash/devops:result'
-        sh 'trivy image -f json -o worker-container-security.json docker.io/spywash/devops:worker'
-        
+        sh 'trivy fs . > git-security.log'
+        sh 'trivy image docker.io/spywash/devops:vote > vote-security.log'
+        sh 'trivy image docker.io/spywash/devops:result > result-security.log'
+        sh 'trivy image docker.io/spywash/devops:worker > worker-security.log' 
       }
     }
     stage('Push result image') {
@@ -59,7 +58,7 @@ pipeline {
   }
   post {
         always {
-            archiveArtifacts artifacts: 'git-security.json, vote-container-security.json, result-container-security.json, worker-container-security.json', onlyIfSuccessful: false
+            archiveArtifacts artifacts: 'git-security.log, vote-security.log, result-security.log, worker-security.log', onlyIfSuccessful: false
         }
     }
 }
