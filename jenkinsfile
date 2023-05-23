@@ -11,37 +11,24 @@ pipeline {
         git branch: 'main', credentialsId: '08239c21-315b-4576-b6ab-caa2d7325a02', url: 'https://github.com/Praxene/example-voting-app.git'
       }
     }
-    stage('Pour les developpeurs') {
-      when {
-          branch 'dev'
+    stage('developpeurs') {
+      parallel {
+        stage('Build result') {
+            steps {
+                sh 'docker build -t spywash/devops:result ./result'
+            }
+        } 
+        stage('Build vote') {
+            steps {
+                sh 'docker build -t spywash/devops:vote ./vote'
+            }
+         }
+        stage('Build worker') {
+            steps {
+                sh 'docker build -t spywash/devops:worker ./worker'
+            }
+        }
       }
-      steps {
-         sh 'echo "c est terminer"'
-      }
-    }
-    stage('Build result') {
-      steps {
-        sh 'docker build -t spywash/devops:result ./result'
-      }
-    } 
-    stage('Build vote') {
-      steps {
-        sh 'docker build -t spywash/devops:vote ./vote'
-      }
-    }
-    stage('Build worker') {
-      steps {
-        sh 'docker build -t spywash/devops:worker ./worker'
-      }
-    }
-     stage('Pour la production') {
-      when {
-          branch 'main'
-      }
-      steps {
-         sh 'echo "c est terminé"'
-      }
-    }
     stage('Security scan') {
       steps {
         sh 'trivy fs . > security.log'
