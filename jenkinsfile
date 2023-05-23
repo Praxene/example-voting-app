@@ -6,6 +6,20 @@ pipeline {
 //		snykSecurity additionalArguments: '--all-projects', snykInstallation: 'snyk', snykTokenId: 'SNYK_TOKEN'
 //	  }
 //	}
+    stage('Checkout') {
+      steps {
+        git branch: 'main', credentialsId: '08239c21-315b-4576-b6ab-caa2d7325a02', url: 'https://github.com/Praxene/example-voting-app.git'
+      }
+    }
+    stage('Pour les developpeurs') {
+      when {
+          branch 'dev'
+      }
+      steps {
+         sh 'echo "c est terminer?'
+              input message: 'Finished using the web site? (Click "Proceed" to continue)'
+      }
+    }
     stage('Build result') {
       steps {
         sh 'docker build -t spywash/devops:result ./result'
@@ -19,6 +33,15 @@ pipeline {
     stage('Build worker') {
       steps {
         sh 'docker build -t spywash/devops:worker ./worker'
+      }
+    }
+     stage('Pour la production') {
+      when {
+          branch 'main'
+      }
+      steps {
+         sh 'echo "c est terminé?'
+              input message: 'Finished using the web site? (Click "Proceed" to continue)'
       }
     }
     stage('Security scan') {
