@@ -1,6 +1,12 @@
 pipeline {
   agent any
   stages {
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', credentialsId: '08239c21-315b-4576-b6ab-caa2d7325a02', url: 'https://github.com/Praxene/example-voting-app.git'
+            }
+        }
     stage('Build result') {
       steps {
         sh 'docker build -t spywash/devops:result ./result'
