@@ -21,11 +21,6 @@ pipeline {
         sh 'docker build -t spywash/devops:worker ./worker'
       }
     }
-    stage('Build seed') {
-      steps {
-        sh 'docker build -t spywash/devops:seed-data ./seed-data'
-      }
-    }
     stage('Security scan') {
       steps {
         sh 'trivy fs . > git-security.log'
@@ -55,16 +50,14 @@ pipeline {
         }
       }
     }
-    stage('Push seed image') {
+    stage('Deploy Kubernetes updates') {
       steps {
-        withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
-          sh 'docker push spywash/devops:seed-data'
-        }
-      }
-    }
-    stage('Apply Kubernetes files') {
-      steps {
-         sh 'kubectl --kubeconfig=/kube/config apply -f kubedeploy2.yml '
+        //Mise à jour du worker
+         sh 'kubectl set image deployments/worker worker=docker.io/spywash/devops:worker '
+        //Mise à jour de résult
+         sh 'kubectl set image deployments/result result=docker.io/spywash/devops:result'
+        //Mise à jour de vote
+         sh 'kubectl set image deployments/vote vote=docker.io/spywash/devops:vote'
       }
     }
   }
