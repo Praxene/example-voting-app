@@ -53,11 +53,11 @@ pipeline {
     stage('Deploy Kubernetes updates') {
       steps {
         //Mise à jour du worker
-         sh 'kubectl set image deployments/worker worker=docker.io/spywash/devops:worker '
+         sh 'kubectl --kubeconfig=/kube/config set image deployments/worker worker=docker.io/spywash/devops:worker '
         //Mise à jour de résult
-         sh 'kubectl set image deployments/result result=docker.io/spywash/devops:result'
+         sh 'kubectl --kubeconfig=/kube/config set image deployments/result result=docker.io/spywash/devops:result'
         //Mise à jour de vote
-         sh 'kubectl set image deployments/vote vote=docker.io/spywash/devops:vote'
+         sh 'kubectl --kubeconfig=/kube/config  set image deployments/vote vote=docker.io/spywash/devops:vote'
       }
     }
   }
