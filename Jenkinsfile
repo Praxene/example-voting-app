@@ -55,7 +55,7 @@ pipeline {
         }
       }
     }
-    stage('Push worker image') {
+    stage('Push seed image') {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
           sh 'docker push spywash/devops:seed-data'
