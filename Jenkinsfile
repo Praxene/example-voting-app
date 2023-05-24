@@ -21,6 +21,11 @@ pipeline {
         sh 'docker build -t spywash/devops:worker ./worker'
       }
     }
+    stage('Build seed') {
+      steps {
+        sh 'docker build -t spywash/devops:seed-data ./seed-data'
+      }
+    }
     stage('Security scan') {
       steps {
         sh 'trivy fs . > git-security.log'
@@ -47,6 +52,13 @@ pipeline {
       steps {
         withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
           sh 'docker push spywash/devops:worker'
+        }
+      }
+    }
+    stage('Push worker image') {
+      steps {
+        withDockerRegistry(credentialsId: 'dockerhubcredentials', url: '') {
+          sh 'docker push spywash/devops:seed-data'
         }
       }
     }
