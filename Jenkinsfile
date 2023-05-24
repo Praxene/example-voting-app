@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-//    stage('Snyk scan') {
-//	  steps {
-//		snykSecurity additionalArguments: '--all-projects', snykInstallation: 'snyk', snykTokenId: 'SNYK_TOKEN'
-//	  }
-//	}
     stage('Build result') {
       steps {
         sh 'docker build -t spywash/devops:result ./result'
